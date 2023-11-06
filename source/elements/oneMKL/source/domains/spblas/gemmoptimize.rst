@@ -42,7 +42,7 @@ optimize_gemm (based on Sparse Matrix)
    namespace oneapi::mkl::sparse {
 
       sycl::event optimize_gemm (sycl::queue                          &queue,
-                                 oneapi::mkl::transpose               transpose_A,
+                                 const oneapi::mkl::transpose         transpose_A,
                                  oneapi::mkl::sparse::matrix_handle_t A_handle,
                                  const std::vector<sycl::event>       &dependencies = {});
 
@@ -118,9 +118,9 @@ optimize_gemm (based on Both Input Matrices)
    namespace oneapi::mkl::sparse {
 
       sycl::event optimize_gemm (sycl::queue                          &queue,
-                                 oneapi::mkl::transpose               transpose_A,
-                                 oneapi::mkl::transpose               transpose_B,
-                                 oneapi::mkl::layout                  dense_matrix_layout,
+                                 const oneapi::mkl::transpose         transpose_A,
+                                 const oneapi::mkl::transpose         transpose_B,
+                                 const oneapi::mkl::layout            dense_matrix_layout,
                                  const std::int64_t                   columns,
                                  oneapi::mkl::sparse::matrix_handle_t A_handle,
                                  const std::vector<sycl::event>       &dependencies = {});

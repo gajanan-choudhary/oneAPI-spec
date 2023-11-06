@@ -35,13 +35,13 @@ gemv (Buffer version)
 
    namespace oneapi::mkl::sparse {
 
-      void gemv (sycl::queue                          &queue, 
-                 oneapi::mkl::transpose               transpose_val, 
-                 const fp                             alpha, 
-                 oneapi::mkl::sparse::matrix_handle_t A_handle, 
-                 sycl::buffer<fp, 1>                  &x, 
-                 const fp                             beta, 
-                 sycl::buffer<fp, 1>                  &y); 
+      void gemv (sycl::queue                          &queue,
+                 const oneapi::mkl::transpose         transpose_val,
+                 const fp                             alpha,
+                 oneapi::mkl::sparse::matrix_handle_t A_handle,
+                 sycl::buffer<fp, 1>                  &x,
+                 const fp                             beta,
+                 sycl::buffer<fp, 1>                  &y);
 
    }
 
@@ -120,12 +120,12 @@ gemv (USM version)
 
    namespace oneapi::mkl::sparse {
 
-      sycl::event gemv (sycl::queue                           &queue, 
-                        oneapi::mkl::transpose                transpose_val, 
-                        const fp                              alpha, 
-                        oneapi::mkl::sparse::matrix_handle_t  A_handle, 
-                        const fp                              *x, 
-                        const fp                              beta, 
+      sycl::event gemv (sycl::queue                           &queue,
+                        const oneapi::mkl::transpose          transpose_val,
+                        const fp                              alpha,
+                        oneapi::mkl::sparse::matrix_handle_t  A_handle,
+                        const fp                              *x,
+                        const fp                              beta,
                         fp                                    *y,
                         const std::vector<sycl::event>        &dependencies = {});
 

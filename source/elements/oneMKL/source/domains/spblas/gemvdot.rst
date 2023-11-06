@@ -44,7 +44,7 @@ gemvdot (Buffer version)
    namespace oneapi::mkl::sparse {
 
       void gemvdot (sycl::queue                          &queue,
-                    oneapi::mkl::transpose               transpose_val,
+                    const oneapi::mkl::transpose         transpose_val,
                     const fp                             alpha,
                     oneapi::mkl::sparse::matrix_handle_t A_handle,
                     sycl::buffer<fp, 1>                  &x,
@@ -134,7 +134,7 @@ gemvdot (USM version)
    namespace oneapi::mkl::sparse {
 
       sycl::event gemvdot (sycl::queue                           &queue,
-                           oneapi::mkl::transpose                transpose_val,
+                           const oneapi::mkl::transpose          transpose_val,
                            const fp                              alpha,
                            oneapi::mkl::sparse::matrix_handle_t  A_handle,
                            const fp                              *x,

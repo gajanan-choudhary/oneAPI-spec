@@ -36,7 +36,7 @@ set_csr_data (Buffer version)
                          const intType                         nrows,
                          const intType                         ncols,
                          const intType                         nnz,
-                         oneapi::mkl::index_base               index,
+                         const oneapi::mkl::index_base         index,
                          sycl::buffer<intType, 1>              &row_ptr,
                          sycl::buffer<intType, 1>              &col_ind,
                          sycl::buffer<fp, 1>                   &val);
@@ -138,7 +138,7 @@ set_csr_data (USM version)
                                 const intType                         nrows,
                                 const intType                         ncols,
                                 const intType                         nnz,
-                                oneapi::mkl::index_base               index,
+                                const oneapi::mkl::index_base         index,
                                 intType                               *row_ptr,
                                 intType                               *col_ind,
                                 fp                                    *val,

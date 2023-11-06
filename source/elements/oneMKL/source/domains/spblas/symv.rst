@@ -38,7 +38,7 @@ symv (Buffer version)
    namespace oneapi::mkl::sparse {
 
       void symv (sycl::queue                          &queue,
-                 oneapi::mkl::uplo                    uplo_val,
+                 const oneapi::mkl::uplo              uplo_val,
                  const fp                             alpha,
                  oneapi::mkl::sparse::matrix_handle_t A_handle,
                  sycl::buffer<fp, 1>                  &x,
@@ -124,7 +124,7 @@ symv (USM version)
    namespace oneapi::mkl::sparse {
 
       sycl::event symv (sycl::queue                           &queue,
-                        oneapi::mkl::uplo                     uplo_val,
+                        const oneapi::mkl::uplo               uplo_val,
                         const fp                              alpha,
                         oneapi::mkl::sparse::matrix_handle_t  A_handle,
                         const fp                              *x,

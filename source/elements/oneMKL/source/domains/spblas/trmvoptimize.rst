@@ -24,9 +24,9 @@ the handle.
    namespace oneapi::mkl::sparse {
 
       sycl::event optimize_trmv (sycl::queue                          &queue,
-                                 oneapi::mkl::uplo                    uplo_val,
-                                 oneapi::mkl::transpose               transpose_val,
-                                 oneapi::mkl::diag                    diag_val,
+                                 const oneapi::mkl::uplo              uplo_val,
+                                 const oneapi::mkl::transpose         transpose_val,
+                                 const oneapi::mkl::diag              diag_val,
                                  oneapi::mkl::sparse::matrix_handle_t handle,
                                  const std::vector<sycl::event>       &dependencies = {});
    }

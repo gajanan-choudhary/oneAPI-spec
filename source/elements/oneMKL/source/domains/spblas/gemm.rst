@@ -41,17 +41,17 @@ gemm (Buffer version)
 
    namespace oneapi::mkl::sparse {
 
-      void gemm (sycl::queue                          &queue, 
-                 oneapi::mkl::layout                  dense_matrix_layout, 
-                 oneapi::mkl::transpose               transpose_A, 
-                 oneapi::mkl::transpose               transpose_B, 
-                 const fp                             alpha, 
-                 oneapi::mkl::sparse::matrix_handle_t A_handle, 
-                 sycl::buffer<fp, 1>                  &B, 
-                 const std::int64_t                   columns, 
-                 const std::int64_t                   ldb, 
-                 const fp                             beta, 
-                 sycl::buffer<fp, 1>                  &C, 
+      void gemm (sycl::queue                          &queue,
+                 const oneapi::mkl::layout            dense_matrix_layout,
+                 const oneapi::mkl::transpose         transpose_A,
+                 const oneapi::mkl::transpose         transpose_B,
+                 const fp                             alpha,
+                 oneapi::mkl::sparse::matrix_handle_t A_handle,
+                 sycl::buffer<fp, 1>                  &B,
+                 const std::int64_t                   columns,
+                 const std::int64_t                   ldb,
+                 const fp                             beta,
+                 sycl::buffer<fp, 1>                  &C,
                  const std::int64_t                   ldc);
 
    }
@@ -181,16 +181,16 @@ gemm (USM version)
 
    namespace oneapi::mkl::sparse {
 
-      sycl::event gemm (sycl::queue                           &queue, 
-                        oneapi::mkl::layout                   dense_matrix_layout, 
-                        oneapi::mkl::transpose                transpose_A, 
-                        oneapi::mkl::transpose                transpose_B, 
-                        const fp                              alpha, 
-                        oneapi::mkl::sparse::matrix_handle_t  A_handle, 
-                        const fp                              *B, 
-                        const std::int64_t                    columns, 
-                        const std::int64_t                    ldb, 
-                        const fp                              beta, 
+      sycl::event gemm (sycl::queue                           &queue,
+                        const oneapi::mkl::layout             dense_matrix_layout,
+                        const oneapi::mkl::transpose          transpose_A,
+                        const oneapi::mkl::transpose          transpose_B,
+                        const fp                              alpha,
+                        oneapi::mkl::sparse::matrix_handle_t  A_handle,
+                        const fp                              *B,
+                        const std::int64_t                    columns,
+                        const std::int64_t                    ldb,
+                        const fp                              beta,
                         fp                                    *C,
                         const std::int64_t                    ldc,
                         const std::vector<sycl::event>        &dependencies = {});

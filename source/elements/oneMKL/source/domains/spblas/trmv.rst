@@ -36,9 +36,9 @@ trmv (Buffer version)
    namespace oneapi::mkl::sparse {
 
       void trmv (sycl::queue                          &queue,
-                 oneapi::mkl::uplo                    uplo_val
-                 oneapi::mkl::transpose               transpose_val,
-                 oneapi::mkl::diag                    diag_val
+                 const oneapi::mkl::uplo              uplo_val
+                 const oneapi::mkl::transpose         transpose_val,
+                 const oneapi::mkl::diag              diag_val
                  const fp                             alpha,
                  oneapi::mkl::sparse::matrix_handle_t A_handle,
                  sycl::buffer<fp, 1>                  &x,
@@ -135,9 +135,9 @@ trmv (USM version)
    namespace oneapi::mkl::sparse {
 
       sycl::event trmv (sycl::queue                           &queue,
-                        oneapi::mkl::uplo                     uplo_val
-                        oneapi::mkl::transpose                transpose_val,
-                        oneapi::mkl::diag                     diag_val
+                        const oneapi::mkl::uplo               uplo_val
+                        const oneapi::mkl::transpose          transpose_val,
+                        const oneapi::mkl::diag               diag_val
                         const fp                              alpha,
                         oneapi::mkl::sparse::matrix_handle_t  A_handle,
                         const fp                              *x,
